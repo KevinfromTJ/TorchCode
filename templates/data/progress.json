@@ -1,0 +1,118 @@
+{
+  "relu": {
+    "status": "attempted",
+    "attempts": 1
+  },
+  "softmax": {
+    "status": "solved",
+    "attempts": 2,
+    "solved_at": "2026-03-09T17:23:19.571784",
+    "best_time": 0.019420046359300613
+  },
+  "linear": {
+    "status": "solved",
+    "solved_at": "2026-03-10T08:57:56.838706",
+    "best_time": 0.05046436795964837,
+    "attempts": 3
+  },
+  "layernorm": {
+    "status": "solved",
+    "attempts": 2,
+    "solved_at": "2026-03-10T03:42:31.230274",
+    "best_time": 0.02785888034850359
+  },
+  "attention": {
+    "status": "solved",
+    "solved_at": "2026-03-10T03:52:42.542405",
+    "best_time": 0.07099220249801874,
+    "attempts": 1
+  },
+  "mha": {
+    "status": "solved",
+    "attempts": 3,
+    "solved_at": "2026-03-10T04:12:58.204105",
+    "best_time": 0.007705422583967447
+  },
+  "causal_attention": {
+    "status": "solved",
+    "attempts": 3,
+    "solved_at": "2026-03-10T04:55:38.937367",
+    "best_time": 0.003548714332282543
+  },
+  "gqa": {
+    "status": "solved",
+    "solved_at": "2026-03-10T05:17:14.253854",
+    "best_time": 0.05107581103220582,
+    "attempts": 1
+  },
+  "kv_cache": {
+    "status": "solved",
+    "solved_at": "2026-03-10T06:36:24.806869",
+    "best_time": 0.05564962700009346,
+    "attempts": 1
+  },
+  "cross_entropy": {
+    "status": "solved",
+    "attempts": 8,
+    "solved_at": "2026-03-10T08:02:26.227944",
+    "best_time": 0.011192090809345245
+  },
+  "lora": {
+    "status": "solved",
+    "attempts": 6,
+    "solved_at": "2026-03-10T08:58:41.469560",
+    "best_time": 0.018807572312653065
+  },
+  "batchnorm": {
+    "status": "solved",
+    "attempts": 6,
+    "solved_at": "2026-03-10T09:40:00.390359",
+    "best_time": 0.01658480614423752
+  },
+  "rmsnorm": {
+    "status": "solved",
+    "solved_at": "2026-03-10T09:56:02.502621",
+    "best_time": 0.001410862896591425,
+    "attempts": 2
+  },
+  "bce_loss": {
+    "status": "attempted",
+    "attempts": 7
+  },
+  "infonce_loss": {
+    "status": "solved",
+    "attempts": 4,
+    "solved_at": "2026-03-10T15:49:07.161393",
+    "best_time": 0.017841044813394547
+  },
+  "dpo_loss": {
+    "status": "solved",
+    "attempts": 4,
+    "solved_at": "2026-03-10T16:02:01.875261",
+    "best_time": 0.01035478338599205
+  },
+  "grpo_loss": {
+    "status": "solved",
+    "attempts": 4,
+    "solved_at": "2026-03-11T09:44:04.854584",
+    "best_time": 0.00521569699048996
+  },
+  "ppo_loss": {
+    "status": "solved",
+    "solved_at": "2026-03-11T09:56:49.298144",
+    "best_time": 0.06255770847201347,
+    "attempts": 1
+  },
+  "full_grpo_loss": {
+    "status": "solved",
+    "attempts": 4,
+    "solved_at": "2026-03-11T10:34:23.224824",
+    "best_time": 0.023742053657770157
+  },
+  "moe_core": {
+    "status": "solved",
+    "attempts": 3,
+    "solved_at": "2026-04-08T01:00:30.294698",
+    "best_time": 0.01447800500318408
+  }
+}
