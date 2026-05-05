@@ -27,7 +27,7 @@ Practice implementing operators and architectures from scratch — the exact ski
 [![GitHub stars](https://img.shields.io/github/stars/duoan/TorchCode?style=social)](https://github.com/duoan/TorchCode)
 [![GitHub Container Registry](https://img.shields.io/badge/ghcr.io-TorchCode-blue?style=flat-square&logo=github)](https://ghcr.io/duoan/torchcode)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Spaces-TorchCode-blue?style=flat-square)](https://huggingface.co/spaces/duoan/TorchCode)
-![Problems](https://img.shields.io/badge/problems-52-orange?style=flat-square)
+![Problems](https://img.shields.io/badge/problems-57-orange?style=flat-square)
 ![GPU](https://img.shields.io/badge/GPU-not%20required-brightgreen?style=flat-square)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=duoan/TorchCode&type=Date)](https://star-history.com/#duoan/TorchCode&Date)
@@ -44,7 +44,7 @@ TorchCode gives you a **structured practice environment** with:
 
 | | Feature | |
 |---|---|---|
-| 🧩 | **52 curated problems** | The most frequently asked PyTorch interview topics |
+| 🧩 | **57 curated problems** | The most frequently asked PyTorch interview topics |
 | ⚖️ | **Automated judge** | Correctness checks, gradient verification, and timing |
 | 🎨 | **Instant feedback** | Colored pass/fail per test case, just like competitive programming |
 | 💡 | **Hints when stuck** | Nudges without full spoilers |
@@ -163,6 +163,9 @@ If you're interviewing for any role touching LLMs or Transformers, expect at lea
 | 30 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/30_cosine_lr.ipynb" target="_blank">Cosine LR Scheduler</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/30_cosine_lr.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `cosine_lr_schedule(step, ...)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | ⭐ | Linear warmup + cosine annealing |
 | 42 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/42_label_smoothing_loss.ipynb" target="_blank">Label Smoothing Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/42_label_smoothing_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `label_smoothing_loss(logits, targets, smoothing)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | ⭐ | Smoothed targets, regularization, stable log-softmax |
 | 43 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/43_focal_loss.ipynb" target="_blank">Focal Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/43_focal_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `focal_loss(logits, targets, gamma, alpha)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | ⭐ | Class imbalance, modulated BCE, detection-style training |
+| 55 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/55_kd_loss.ipynb" target="_blank">Knowledge Distillation Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/55_kd_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `kd_loss(student_logits, teacher_logits, targets, ...)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | ⭐ | Hinton KD, temperature, CE + KL mixture |
+| 56 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/56_self_distillation_loss.ipynb" target="_blank">Self-Distillation Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/56_self_distillation_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `self_distillation_loss(main_logits, aux_logits, targets, ...)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | 💡 | Main/aux head distillation, detached teacher path |
+| 57 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/57_on_policy_distillation_loss.ipynb" target="_blank">On-Policy Distillation Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/57_on_policy_distillation_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `on_policy_distillation_loss(student_logits, teacher_logits, mask, ...)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Token-level KL, masked normalization, frozen teacher |
 
 ### 🎯 Inference & Decoding
 
@@ -187,6 +190,8 @@ If you're interviewing for any role touching LLMs or Transformers, expect at lea
 | 50 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/50_gspo_loss.ipynb" target="_blank">GSPO Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/50_gspo_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `gspo_loss(logps, old_logps, ref_logps, rewards, group_ids, mask, ...)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Sequence-level ratio, masked KL, grouped rewards |
 | 51 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/51_gdpo_loss.ipynb" target="_blank">GDPO Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/51_gdpo_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `gdpo_loss(logps, old_logps, ref_logps, rewards, group_ids, mask, ...)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Multi-reward decoupled normalization, grouped advantages |
 | 52 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/52_dapo_loss.ipynb" target="_blank">DAPO Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/52_dapo_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `dapo_loss(logps, old_logps, ref_logps, rewards, group_ids, mask, ...)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Global token normalization, asymmetric clipping, grouped rewards |
+| 53 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/53_vit_full.ipynb" target="_blank">Vision Transformer (Full)</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/53_vit_full.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `VisionTransformer` (nn.Module) | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Patch embed, cls token, pos embed, Transformer encoder |
+| 54 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/54_rope_2d.ipynb" target="_blank">2D RoPE</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/54_rope_2d.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `apply_2d_rope(q, k, height, width)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Vision patch grids, row/column rotary encoding |
 
 ---
 
@@ -233,7 +238,7 @@ status()                    # Progress dashboard — solved / attempted / todo
 | **1** | 🧱 Foundations | ReLU → Softmax → CE Loss → BCE Loss → Dropout → Embedding → GELU → Linear → LayerNorm → BatchNorm → RMSNorm → SwiGLU MLP → Conv2d | 2–3 hrs |
 | **2** | 🧠 Attention Deep Dive | SDPA → MHA → Cross-Attn → Causal → GQA → KV Cache → Sliding Window → RoPE → Linear Attn → Flash Attn | 3–4 hrs |
 | **3** | 🏗️ Architecture + Training | GPT-2 Block → LoRA → MoE → MoE Core → Advanced MoE → ViT Patch → Adam → Muon → Cosine LR → Label Smoothing → Focal Loss → Grad Clip → Grad Accumulation → Kaiming Init | 3–4 hrs |
-| **4** | 🎯 Inference + Advanced | Top-k/p Sampling → Beam Search → Speculative Decoding → InfoNCE → BPE → Full Tokenizer → INT8 Quant → DPO Loss → GRPO Loss → Full GRPO Loss → GSPO → GDPO → DAPO → PPO Loss + speed run | 3–4 hrs |
+| **4** | 🎯 Inference + Advanced | Top-k/p Sampling → Beam Search → Speculative Decoding → InfoNCE → BPE → Full Tokenizer → INT8 Quant → DPO Loss → GRPO Loss → Full GRPO Loss → GSPO → GDPO → DAPO → ViT Full → 2D RoPE → KD → Self-Distill → On-Policy Distill → PPO Loss + speed run | 3–4 hrs |
 
 ---
 
