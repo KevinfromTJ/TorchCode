@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import re
 import time
 import traceback
+import types
 from typing import Any
 
 from torch_judge.tasks import get_task, TASKS
@@ -15,6 +17,64 @@ _RED = "\033[91m"
 _YELLOW = "\033[93m"
 _DIM = "\033[90m"
 _BOLD = "\033[1m"
+
+_MAX_VAL_LEN = 300
+_MAX_VARS = 8
+
+
+def _format_value(value: Any) -> str:
+    """repr a value for failure output, truncating long/expensive reprs."""
+    try:
+        text = repr(value)
+    except Exception:  # noqa: BLE001 - a broken __repr__ shouldn't hide the real failure
+        return f"<unreprable {type(value).__name__}>"
+    text = " ".join(text.split())  # collapse tensor/array multi-line reprs onto one line
+    if len(text) > _MAX_VAL_LEN:
+        text = text[:_MAX_VAL_LEN] + " …"
+    return text
+
+
+def _failure_context(exc: BaseException, test_code: str, fn_name: str) -> tuple[str, dict[str, Any]]:
+    """Locate the offending line in the test source and the locals that produced it.
+
+    Returns (source_line, variables) where ``variables`` favours names referenced on the
+    failing line (the concrete input + the reference/expected answer) so a wrong answer is
+    debuggable without reading the whole test.
+    """
+    frame = None
+    lineno = 0
+    tb = exc.__traceback__
+    while tb is not None:
+        if tb.tb_frame.f_code.co_filename.startswith("<test:"):
+            frame = tb.tb_frame
+            lineno = tb.tb_lineno
+        tb = tb.tb_next
+    if frame is None:
+        return "", {}
+
+    lines = test_code.split("\n")
+    src = lines[lineno - 1].strip() if 0 <= lineno - 1 < len(lines) else ""
+
+    candidates: dict[str, Any] = {}
+    for name, val in frame.f_locals.items():
+        if name == fn_name or name.startswith("__"):
+            continue
+        if callable(val) or isinstance(val, (type, types.ModuleType)):
+            continue
+        candidates[name] = val
+
+    # Prefer variables that actually appear on the failing line.
+    referenced = {n: v for n, v in candidates.items() if re.search(rf"\b{re.escape(n)}\b", src)}
+    chosen = referenced or candidates
+    return src, dict(list(chosen.items())[:_MAX_VARS])
+
+
+def _print_failure_context(exc: BaseException, test_code: str, fn_name: str) -> None:
+    src, variables = _failure_context(exc, test_code, fn_name)
+    if src:
+        print(f"     {_DIM}case: {src}{_RESET}")
+    for name, val in variables.items():
+        print(f"     {_DIM}  {name} = {_format_value(val)}{_RESET}")
 
 
 def _get_user_namespace() -> dict[str, Any]:
@@ -81,6 +141,7 @@ def check(task_id: str) -> None:
             msg = str(e) or "Assertion failed"
             print(f"  {_RED}❌ [{i}/{total}] {test['name']}{_RESET}")
             print(f"     {_RED}{msg}{_RESET}")
+            _print_failure_context(e, test_code, fn_name)
         except Exception as e:
             elapsed = time.perf_counter() - t0
             print(f"  {_RED}💥 [{i}/{total}] {test['name']}{_RESET}")
@@ -88,6 +149,7 @@ def check(task_id: str) -> None:
             tb = traceback.format_exc()
             short_tb = "\n".join(tb.strip().split("\n")[-3:])
             print(f"     {_DIM}{short_tb}{_RESET}")
+            _print_failure_context(e, test_code, fn_name)
 
     print(f"{'─' * 50}")
 
