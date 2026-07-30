@@ -27,7 +27,7 @@ Practice implementing operators and architectures from scratch — the exact ski
 [![GitHub stars](https://img.shields.io/github/stars/duoan/TorchCode?style=social)](https://github.com/duoan/TorchCode)
 [![GitHub Container Registry](https://img.shields.io/badge/ghcr.io-TorchCode-blue?style=flat-square&logo=github)](https://ghcr.io/duoan/torchcode)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Spaces-TorchCode-blue?style=flat-square)](https://huggingface.co/spaces/duoan/TorchCode)
-![Problems](https://img.shields.io/badge/problems-71-orange?style=flat-square)
+![Problems](https://img.shields.io/badge/problems-72-orange?style=flat-square)
 ![GPU](https://img.shields.io/badge/GPU-not%20required-brightgreen?style=flat-square)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=duoan/TorchCode&type=Date)](https://star-history.com/#duoan/TorchCode&Date)
@@ -195,6 +195,7 @@ If you're interviewing for any role touching LLMs or Transformers, expect at lea
 | 52 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/52_dapo_loss.ipynb" target="_blank">DAPO Loss</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/52_dapo_loss.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `dapo_loss(logps, old_logps, ref_logps, rewards, group_ids, mask, ...)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Global token normalization, asymmetric clipping, grouped rewards |
 | 53 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/53_vit_full.ipynb" target="_blank">Vision Transformer (Full)</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/53_vit_full.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `VisionTransformer` (nn.Module) | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Patch embed, cls token, pos embed, Transformer encoder |
 | 54 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/54_rope_2d.ipynb" target="_blank">2D RoPE</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/54_rope_2d.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `apply_2d_rope(q, k, height, width)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Vision patch grids, row/column rotary encoding |
+| 76 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/76_nano_gpt.ipynb" target="_blank">Minimal GPT (nanoGPT)</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/76_nano_gpt.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `GPT` (nn.Module) | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | ⭐ | Decoder-only Transformer, token+pos embed, causal blocks, CE training, greedy generate |
 
 ### 🧮 Algorithms & Problem Solving — Pure-Python coding rounds
 
