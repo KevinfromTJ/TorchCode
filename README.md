@@ -27,7 +27,7 @@ Practice implementing operators and architectures from scratch — the exact ski
 [![GitHub stars](https://img.shields.io/github/stars/duoan/TorchCode?style=social)](https://github.com/duoan/TorchCode)
 [![GitHub Container Registry](https://img.shields.io/badge/ghcr.io-TorchCode-blue?style=flat-square&logo=github)](https://ghcr.io/duoan/torchcode)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Spaces-TorchCode-blue?style=flat-square)](https://huggingface.co/spaces/duoan/TorchCode)
-![Problems](https://img.shields.io/badge/problems-72-orange?style=flat-square)
+![Problems](https://img.shields.io/badge/problems-73-orange?style=flat-square)
 ![GPU](https://img.shields.io/badge/GPU-not%20required-brightgreen?style=flat-square)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=duoan/TorchCode&type=Date)](https://star-history.com/#duoan/TorchCode&Date)
@@ -209,6 +209,7 @@ No PyTorch — classic data-structures/algorithms in **LeetCode class-mode** (`c
 | 71 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/71_gpu_batch_packing.ipynb" target="_blank">GPU Batch Packing (Fixed Token Buffer)</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/71_gpu_batch_packing.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `Solution.min_batches(lengths, b, g)` | ![Easy](https://img.shields.io/badge/Easy-4CAF50?style=flat-square) | 💡 | Continuous-batching, fixed token buffer + inter-request gaps, next-fit sweep |
 | 67 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/67_gpu_batch_scheduling.ipynb" target="_blank">GPU Batch Scheduling</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/67_gpu_batch_scheduling.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `Solution.min_batches(lengths, m, k, c)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Sort + two pointers, DP, diagonal prefix-min, bounded drops |
 | 69 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/69_cycle_flip_maintenance.ipynb" target="_blank">Single-Cycle Graph Alarm Flip</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/69_cycle_flip_maintenance.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `Solution.solve(n, state, edges)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | XOR parity feasibility, spanning tree, cycle toggling, greedy |
+| 77 | <a href="https://github.com/duoan/TorchCode/blob/master/templates/77_dijkstra_free_edge.ipynb" target="_blank">Shortest Path with One Free Edge</a> <a href="https://colab.research.google.com/github/duoan/TorchCode/blob/master/templates/77_dijkstra_free_edge.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `Solution.min_weight_path(n, edges)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | 💡 | State-augmented Dijkstra, layered graph `(node, used)`, one edge to zero |
 
 ---
 
